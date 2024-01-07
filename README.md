@@ -1,2 +1,2 @@
 # ts-miniflare
-Run typescript Cloudflare Workers with Miniflare
+Run TypeScript Cloudflare Workers with Miniflare
