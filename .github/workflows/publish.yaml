@@ -1,0 +1,21 @@
+name: Publish package to npm registry
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: mreg-io/setup-pnpm@v1
+      - name: Publish
+        run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
