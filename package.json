@@ -1,0 +1,41 @@
+{
+  "name": "ts-miniflare",
+  "version": "0.1.0",
+  "description": "Run TypeScript Cloudflare Workers with Miniflare",
+  "keywords": [
+    "cloudflare",
+    "cloudflare-workers",
+    "miniflare",
+    "typescript",
+    "testing"
+  ],
+  "homepage": "https://github.com/ZhaoTzuHsien/ts-miniflare",
+  "bugs": "https://github.com/ZhaoTzuHsien/ts-miniflare/issues",
+  "license": "MPL-2.0",
+  "author": "Chao Tzu-Hsien <danny900714@gmail.com> (https://github.com/ZhaoTzuHsien)",
+  "repository": "github:ZhaoTzuHsien/ts-miniflare",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "engines": {
+    "node": ">= 20.1.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
+    "prepublishOnly": "tsc"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.11",
+    "miniflare": "^3.20231218.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "@tsconfig/node-lts": "^20.1.1",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
