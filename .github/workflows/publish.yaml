@@ -16,6 +16,6 @@ jobs:
       - name: Setup pnpm
         uses: mreg-io/setup-pnpm@v1
       - name: Publish
-        run: pnpm publish
+        run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
