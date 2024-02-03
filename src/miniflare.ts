@@ -1,7 +1,12 @@
 import { BuildOptions, buildSync } from 'esbuild'
 import { Miniflare, MiniflareOptions } from 'miniflare'
+
+type TsMiniflareOptions = MiniflareOptions & {
+  esbuild?: BuildOptions,
+}
+
 export class TsMiniflare extends Miniflare {
-  constructor(opts: MiniflareOptions) {
+  constructor(opts: TsMiniflareOptions) {
     const defaultOptions: BuildOptions = {
       format: 'esm',
       target: 'esnext',
@@ -18,12 +23,14 @@ export class TsMiniflare extends Miniflare {
           contents: opts.script,
           resolveDir: __dirname,
         },
+        ...opts.esbuild,
       })
     } else if ('scriptPath' in opts) {
       // Compile typescript using entrypoint
       result = buildSync({
         ...defaultOptions,
         entryPoints: [opts.scriptPath],
+        ...opts.esbuild,
       })
     } else throw new Error('script or scriptPath options is required')
 
