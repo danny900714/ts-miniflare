@@ -1,6 +1,6 @@
 {
   "name": "ts-miniflare",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Run TypeScript Cloudflare Workers with Miniflare",
   "keywords": [
     "cloudflare",
